@@ -4,6 +4,9 @@ import { useActionState } from "react";
 import { useRouter } from "next/navigation";
 import { login } from "@/app/actions";
 
+
+export const runtime = "nodejs";
+
 type Result = { ok: boolean; error?: string; fieldErrors?: Record<string, string[]> } | undefined;
 
 export default function LoginPage() {

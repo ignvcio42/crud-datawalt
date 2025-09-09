@@ -4,6 +4,8 @@ import { useActionState, useEffect, useRef } from "react";
 import { useRouter } from "next/navigation";
 import { createAnnouncement, updateAnnouncement } from "@/app/actions";
 
+export const runtime = "nodejs";
+
 type ActionResult = {
   ok: boolean;
   fieldErrors?: { title?: string[]; body?: string[]; id?: string[] };

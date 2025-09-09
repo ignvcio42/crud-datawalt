@@ -4,6 +4,9 @@ import { useState, useTransition } from "react";
 import { deleteAnnouncement, togglePin } from "@/app/actions";
 import AnnouncementForm from "./AnnouncementForm";
 
+export const runtime = "nodejs";
+
+
 type Item = {
   id: number;
   title: string;

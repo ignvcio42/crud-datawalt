@@ -3,8 +3,11 @@ import Link from "next/link";
 import { getCurrentUser } from "@/lib/auth";
 import { logout } from "@/app/actions";
 
+export const runtime = "nodejs";
+
 export default async function Navbar() {
   const user = await getCurrentUser();
+  
 
   return (
     <nav className="border-b sticky top-0 z-10 bg-background/80 backdrop-blur">

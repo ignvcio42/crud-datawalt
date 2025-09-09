@@ -5,6 +5,8 @@ import { revalidatePath } from "next/cache";
 import { z } from "zod";
 import { getCurrentUser, setUserSession, clearSession } from "@/lib/auth";
 
+export const runtime = "nodejs";
+
 /* -------- Validaciones -------- */
 const RegisterSchema = z.object({
   name: z.string().min(2, "Nombre muy corto"),

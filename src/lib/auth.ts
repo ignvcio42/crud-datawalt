@@ -2,6 +2,8 @@ import { cookies } from "next/headers";
 import { prisma } from "./prisma";
 
 const COOKIE = "uid";
+export const runtime = "nodejs";
+
 
 /** Devuelve el usuario actual (o null) leyendo la cookie uid */
 export async function getCurrentUser() {
