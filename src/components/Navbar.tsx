@@ -3,7 +3,6 @@ import Link from "next/link";
 import { getCurrentUser } from "@/lib/auth";
 import { logout } from "@/app/actions";
 
-export const runtime = "nodejs";
 
 export default async function Navbar() {
   const user = await getCurrentUser();

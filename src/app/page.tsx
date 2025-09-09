@@ -3,8 +3,6 @@ import { getCurrentUser } from "@/lib/auth";
 import AnnouncementForm from "@/components/AnnouncementForm";
 import AnnouncementItem from "@/components/AnnouncementItem";
 
-export const runtime = "nodejs";
-
 export const dynamic = "force-dynamic";
 
 export default async function Home() {
