@@ -9,7 +9,7 @@ import { getCurrentUser, setUserSession, clearSession } from "@/lib/auth";
 const RegisterSchema = z.object({
   name: z.string().min(2, "Nombre muy corto"),
   email: z.string().email("Email inválido"),
-  password: z.string().min(4, "Mínimo 4 caracteres"), // demo
+  password: z.string().min(4, "Mínimo 4 caracteres"),
 });
 
 const LoginSchema = z.object({
@@ -41,7 +41,6 @@ export async function register(fd: FormData) {
   const exists = await prisma.user.findUnique({ where: { email } });
   if (exists) return { ok: false, error: "Ese email ya está registrado" };
 
-  // DEMO: contraseña en texto plano (no producción)
   const user = await prisma.user.create({ data: { name, email, password } });
   await setUserSession(user.id);
   revalidatePath("/");

@@ -5,7 +5,7 @@ const COOKIE = "uid";
 
 /** Devuelve el usuario actual (o null) leyendo la cookie uid */
 export async function getCurrentUser() {
-  const cookieStore = await cookies();                 // 👈 ahora asíncrono
+  const cookieStore = await cookies(); 
   const raw = cookieStore.get(COOKIE)?.value;
   if (!raw) return null;
   const id = Number(raw);
@@ -19,7 +19,7 @@ export async function getCurrentUser() {
 
 /** Guarda cookie de sesión con el id del usuario (demo) */
 export async function setUserSession(userId: number) {
-  const cookieStore = await cookies();                 // 👈 asíncrono
+  const cookieStore = await cookies(); 
   cookieStore.set(COOKIE, String(userId), {
     httpOnly: true,
     sameSite: "lax",
@@ -31,6 +31,6 @@ export async function setUserSession(userId: number) {
 
 /** Elimina la cookie de sesión */
 export async function clearSession() {
-  const cookieStore = await cookies();                 // 👈 asíncrono
+  const cookieStore = await cookies();
   cookieStore.delete(COOKIE);
 }
