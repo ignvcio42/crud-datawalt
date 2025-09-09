@@ -65,10 +65,9 @@ export async function login(fd: FormData) {
   return { ok: true };
 }
 
-export async function logout() {
+export async function logout(_fd: FormData): Promise<void> { // 👈 firma compatible
   await clearSession();
   revalidatePath("/");
-  return { ok: true };
 }
 
 /* -------- CRUD -------- */
